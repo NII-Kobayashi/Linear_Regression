@@ -1,16 +1,17 @@
-from linear_regression import *
+from Linear_Regression.estimation import *
+from Linear_Regression.prediction import *
 import glob as gb
 import numpy as np
-import math
+import matplotlib.pyplot as plt
 
 # estimation
 T_OBS = 12
 T_PRED = 16
-file_list_training = sorted(gb.glob("Example/training/RT*.txt"), key=numerical_sort)  # for all the training file
+file_list_training = sorted(gb.glob("Data/training/RT*.txt"), key=numerical_sort)  # for all the training file
 parameters_value = linear_regression_estimation(file_list_training, T_OBS, T_PRED)
 
 # prediction
-file_list_test = sorted(gb.glob("Example/test/RT*.txt"), key=numerical_sort)  # for all the training file
+file_list_test = sorted(gb.glob("Data/test/RT*.txt"), key=numerical_sort)  # for all the training file
 nfile_prediction_result = linear_regression_prediction(parameters_value, T_OBS, T_PRED, file_list_test)
 
 
