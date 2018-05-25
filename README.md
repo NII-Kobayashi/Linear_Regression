@@ -36,7 +36,7 @@ readable and understandable.
 ## Description of each module
 
  - *example.py* : shows the working example and the plot for one file
- - *example_cross_validation.py* : shows the working example with 5 cross validation and gives the average mean, media error and correlation
+ - *example_cross_validation.py* : shows the working example with 5 cross validation and prints the average mean, media error and correlation
  - *estimate.py* :  implements the basic mathematical expression
     from the linear regression equations used in the paper for estimating the parameters.
  - *prediction.py* : implements the basic mathematical expression

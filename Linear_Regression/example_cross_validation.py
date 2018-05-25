@@ -14,8 +14,7 @@ def main(window_size, obs_time, file_list):
         event_list = list(filter(None.__ne__, event_list))  # checking for none value
         result_lr = cross_validation_error(5, event_list, max_value)
         print("Time:", t, result_lr)
-        return "Time:", t, result_lr
 
 
 file_list_all = sorted(gb.glob("Data/RT*.txt"), key=numerical_sort)  # for all file
-result_values = main(4, 6, file_list_all)
+main(4, 6, file_list_all)
