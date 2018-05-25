@@ -2,9 +2,21 @@ from Linear_Regression.functions import *
 import math
 
 
-def linear_regression_estimation(training_data, t_obs, t_pred):
+def parameters(log_r_inf, log_r_time):
     """
     calculate the parameters value of linear regression model
+    :param log_r_time: array containing the total number of re-tweet at time T
+    :param log_r_inf: array containing the total number of re-tweet
+    :return: the tuple containing the linear regression model parameters (alpha and variance)
+    """
+    alpha = sum([(log_r_inf[i] - log_r_time[i]) for i in range(len(log_r_time))]) / len(log_r_time)
+    var = sum([(log_r_inf[i] - log_r_time[i] - alpha) ** 2 for i in range(len(log_r_time))]) / len(log_r_time)
+    return alpha, var
+
+
+def linear_regression_estimation(training_data, t_obs, t_pred):
+    """
+     call the no_of_events and parameters function and rise an exception if training file is less then 10
     :param training_data: the files used for training the model
     :param t_obs: the observation time
     :param t_pred: the prediction time
@@ -16,6 +28,5 @@ def linear_regression_estimation(training_data, t_obs, t_pred):
     event_list = list(filter(None.__ne__, event_list))  # checking for none value
     log_t_obs = [math.log(event_list[i][0]) for i in range(len(event_list))]
     log_t_pred_actual = [math.log(event_list[i][1]) for i in range(len(event_list))]
-    alpha = sum([(log_t_pred_actual[i] - log_t_obs[i]) for i in range(len(log_t_obs))]) / len(log_t_obs)
-    var = sum([(log_t_pred_actual[i] - log_t_obs[i] - alpha) ** 2 for i in range(len(log_t_obs))]) / len(log_t_obs)
-    return alpha, var
+    parameters_val = parameters(log_t_pred_actual, log_t_obs)
+    return parameters_val

@@ -1,14 +1,15 @@
 # Prediction of Twitter retweet dynamic using Linear Regression Model
 
-This is the code illustrating the *Kobayashi & Lambiotte 2016* paper and aims at
+This is the code illustrating the *Szabo and Huberman
+2010; Zhao et al., 2015* paper and aims at
 providing a framework for experimenting with Linear Regression in
 the context of twitter retweet prediction.
 
 ## Requirements
 
  - Python 3
- - glob
  - Numpy >= 1.10.4
+ -sklearn > =  0.19.1
 
 ## Getting started
 
@@ -34,15 +35,34 @@ readable and understandable.
 
 ## Description of each module
 
- - *main.py* : his is a front-end module that offers high-level functions to
-   estimate the parameters of the model and compute prediction on a tweet
-   sequence.
+ - *example.py* : shows the working example and the plot for one file
+ - *example_cross_validation.py* : shows the working example with 5 cross validation and gives the average mean, media error and correlation
  - *estimate.py* :  implements the basic mathematical expression
     from the linear regression equations used in the paper for estimating the parameters.
  - *prediction.py* : implements the basic mathematical expression
     from the linear regression equations used in the paper for predicting the parameters.
- - *functions.py* :  implements the basic mathematical expression
-    from the linear regression equations used in the paper for extracting the number
+ - *cross_validation.py* : function for 5- fold cross validation on all the data set
+    from the linear regression equations used in the paper for predicting the parameters.
+ - *functions.py* :  implements the function for extracting the number
     of events from the data file and a function to sort the file name numerically
 
 
+## Data source
+
+The provided samples are extracted from the data set used by Zhao et al. in the
+[SEISMIC](http://snap.stanford.edu/seismic/seismic.pdf) paper. You can find more
+information about the data [here] (http://snap.stanford.edu/seismic/#data).
+
+For this work the data (used for training) was slightly aggregated to the
+following format:
+- one file peer tweet
+- space separated
+- first row: \<number of total retweets\> \<start time of tweet in days\>
+- every other row: \<relative time of tweet/retweet in seconds\> \<number of followers\>
+- only
+
+## License
+
+This project is licensed under the terms of the MIT license.
+
+Please contact me if you want to use the code for commercial purposes.

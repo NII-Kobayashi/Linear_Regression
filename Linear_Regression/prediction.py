@@ -10,8 +10,13 @@ def event_prediction(alpha, var, r_t):
     :param r_t: the total number of tweet at the observation time
     :return: the biased estimator
     """
-    r_est = r_t * (math.exp(alpha + (var / 2.0)))
-    return r_est
+
+    if type(alpha) == float:
+        r_est = r_t * (math.exp(alpha + (var / 2.0)))
+        return r_est
+    else:
+        r_est = [r_t * (math.exp(alpha[i] + (var[i] / 2.0))) for i in range(len(alpha))]
+        return r_est
 
 
 def linear_regression_prediction(parameters_estimated, t_obs, t_pred, test_data):

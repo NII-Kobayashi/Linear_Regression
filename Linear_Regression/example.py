@@ -30,7 +30,3 @@ plt.xlabel('T (hours)')
 plt.xlim(0, runtime + 1)
 plt.ylabel('Events per window')
 plt.title('Predicting twitter retweets')
-
-
-
-
