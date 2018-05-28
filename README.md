@@ -28,7 +28,8 @@ The **Linear_Regression** folder contains all the core python code.
 
 You can just run :
 
-    python3 <name of the example file>
+     python example.py
+     python example_cross_validation.py
 
 Without modifying anything. The example files are commented and should be
 readable and understandable.

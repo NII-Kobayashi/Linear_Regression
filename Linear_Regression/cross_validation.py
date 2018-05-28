@@ -5,11 +5,11 @@ from Linear_Regression.estimation import *
 from Linear_Regression.prediction import *
 
 
-def cross_validation_error(iteration, eventlist_data, max_value_itr):
+def cross_validation_error(k_fold, event_list_data, max_value_itr):
     """
        estimate the mean, media error and mean, median correlation
-       :param iteration: he number of times we want to run the iteration
-       :param eventlist_data: contains list log and anti log values of events at time t and events at interval of window
+       :param k_fold: the number of times we want to use the cross-validation
+       :param event_list_data: contains list log and anti log values of events at time t and events at interval of window
        size, from all the data files
        :return: the average mean, media error and correlation
        """
@@ -19,13 +19,13 @@ def cross_validation_error(iteration, eventlist_data, max_value_itr):
     actual_list_all = []
     error_list_all = []
     correlation_list = []
-    kf = KFold(n_splits=iteration)
-    for train_index, test_index in kf.split(eventlist_data):
-        r_t_window = [(eventlist_data[i][0]) for i in range(len(eventlist_data))]
-        r_t_window_log = [(eventlist_data[i][1]) for i in range(len(eventlist_data))]
-        r_time = [(eventlist_data[i][2]) for i in range(len(eventlist_data))]
+    kf = KFold(n_splits=k_fold)
+    for train_index, test_index in kf.split(event_list_data):
+        r_t_window = [(event_list_data[i][0]) for i in range(len(event_list_data))]
+        r_t_window_log = [(event_list_data[i][1]) for i in range(len(event_list_data))]
+        r_time = [(event_list_data[i][2]) for i in range(len(event_list_data))]
 
-        r_time_log = [(eventlist_data[i][3]) for i in range(len(eventlist_data))]
+        r_time_log = [(event_list_data[i][3]) for i in range(len(event_list_data))]
         r_inf_array = np.asarray(r_t_window)
         r_inf_array_log = np.asarray(r_t_window_log)
         r_time_array = np.asarray(r_time)

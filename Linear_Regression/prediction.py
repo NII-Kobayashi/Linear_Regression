@@ -1,4 +1,4 @@
-from Linear_Regression.functions import *
+from functions import *
 import math
 
 

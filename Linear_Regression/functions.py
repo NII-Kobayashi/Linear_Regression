@@ -80,3 +80,32 @@ def no_of_events_in_window(event_file, t_hours, win_size, max_itr, time_factor=1
         pass
     else:
         return event_eof_list, event_eof_list_log, event_t, math.log(event_t)  # not considering the original tweet
+
+
+# for linear regression - node
+def no_of_events_followers(tweet_file, t_observation, time_factor=1):
+    """
+    calculate the tweet number
+    :param tweet_file: path to file
+    :param t_prediction: prediction time
+    :param time_factor: factor to multiply time with, useful to convert time unit
+    :return: the tuple containing the (total_no_of_tweets (at the specific time), tweets_at time_t)
+    """
+    event_no_t_obs = 0
+    follower_t = 0
+    original_follower = 0
+    with open(tweet_file, "r") as in_file:
+        first = next(in_file)  # to remove the first line in the tweet file
+        for num, line in enumerate(in_file, 1):  # 0 to remove the original tweet  # change to 1 to add original tweet
+            values = line.split(" ")
+            if num == 1:
+                original_follower = int(values[1])
+            if float(values[0]) <= (t_observation * time_factor):
+                follower_t = follower_t + int(values[1])
+                event_no_t_obs = num
+
+    if event_no_t_obs == 0:
+        warnings.warn("No event have occurred till the observation time. The file WILL BE IGNORED")
+        print("Ignored File Name:", tweet_file)
+    else:
+        return original_follower, follower_t, event_no_t_obs
