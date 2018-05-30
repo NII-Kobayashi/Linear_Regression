@@ -1,8 +1,28 @@
+# Author: Niharika Singhal
+#
+# For license information, see LICENSE.txt
+
+"""
+Full example to checks the accuracy of the model.
+Please replace file paths according to your local directory structure.
+
+References
+----------
+.. *Szabo and Huberman, Communication of the ACM 53, 80 2010; Zhao et al., in KDD' 15 2015 pp. 1513-1522*.
+"""
+
 from Linear_Regression.cross_validation import *
 import glob as gb
 
 
 def main(window_size, obs_time, file_list):
+    """
+       print the mean, median and correlation error at the observation
+       :param window_size: the window size for multiple prediction value
+       :param obs_time: observation time
+       :param file_list: data files
+
+       """
     for k in range(0, 5):
         if k == 4:
             t = 72
@@ -16,5 +36,6 @@ def main(window_size, obs_time, file_list):
         print("Time:", t, result_lr)
 
 
-file_list_all = sorted(gb.glob("Data/RT*.txt"), key=numerical_sort)  # for all file
+file_path = "Data/RT*.txt"
+file_list_all = sorted(gb.glob(file_path), key=numerical_sort)
 main(4, 6, file_list_all)

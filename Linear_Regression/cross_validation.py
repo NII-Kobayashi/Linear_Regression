@@ -1,3 +1,15 @@
+# Author: Niharika Singhal
+#
+# For license information, see LICENSE.txt
+
+"""
+Implements functions to check the accuracy of the model by using cross- validation
+
+References
+----------
+.. *Szabo and Huberman, Communication of the ACM 53, 80 2010; Zhao et al., in KDD' 15 2015 pp. 1513-1522*.
+"""
+
 import numpy as np
 from sklearn.model_selection import KFold
 import statistics
@@ -9,8 +21,8 @@ def cross_validation_error(k_fold, event_list_data, max_value_itr):
     """
        estimate the mean, media error and mean, median correlation
        :param k_fold: the number of times we want to use the cross-validation
-       :param event_list_data: contains list log and anti log values of events at time t and events at interval of window
-       size, from all the data files
+       :param event_list_data: list log and anti log values, for the re-tweet at time t and re-tweet at multiple
+       prediction time, from all the data files
        :return: the average mean, media error and correlation
        """
     parameters_value_list = []

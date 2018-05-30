@@ -1,9 +1,9 @@
 # Prediction of Twitter retweet dynamic using Linear Regression Model
 
-This is the code illustrating the *Szabo and Huberman
-2010; Zhao et al., 2015* paper and aims at
-providing a framework for experimenting with Linear Regression in
-the context of twitter retweet prediction.
+This is the code illustrating the *Szabo and Huberman, Communication of the ACM 53, 80 2010;
+Zhao et al., in KDD' 15 2015 pp. 1513-1522*.
+It aims at providing a framework for experimenting with Linear Regression in
+the context of twitter re-tweet prediction.
 
 ## Requirements
 

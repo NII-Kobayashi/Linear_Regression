@@ -1,10 +1,22 @@
+# Author: Niharika Singhal
+#
+# For license information, see LICENSE.txt
+
+"""
+Implements functions for predicting the future re-tweets
+
+References
+----------
+.. *Szabo and Huberman, Communication of the ACM 53, 80 2010; Zhao et al., in KDD' 15 2015 pp. 1513-1522*.
+"""
+
 from functions import *
 import math
 
 
 def event_prediction(alpha, var, r_t):
     """
-    estimate the total number of possible tweet at the time t
+    estimate the total number of possible re-tweet at the time t
     :param alpha: estimator parameter for linear regression model
     :param var: estimator parameter for linear regression model
     :param r_t: the total number of tweet at the observation time
@@ -21,11 +33,11 @@ def event_prediction(alpha, var, r_t):
 
 def linear_regression_prediction(parameters_estimated, t_obs, t_pred, test_data):
     """
-    estimate the prediction value for a linear regression model
-    :param parameters_estimated: estimated parameter (alpha, var) obtained for linear regression model
+    call the event_prediction function to estimate the number of possible re-tweet at time t
+    :param parameters_estimated: estimated parameter (alpha, var) obtained from linear_regression_estimation function
     :param t_obs: the observation time
     :param t_pred: the prediction time
-    :param test_data: data files on which we want to calculate the prediction
+    :param test_data: data files on which we want to do the prediction
     :return: the prediction value for all the files
     """
     event_list_test = [no_of_events(test_data[i], t_obs, t_pred, 3600) for i in range(len(test_data))]

@@ -1,12 +1,24 @@
+# Author: Niharika Singhal
+#
+# For license information, see LICENSE.txt
+
+"""
+Implements functions for estimating the parameters used in linear regression model
+
+References
+----------
+.. *Szabo and Huberman, Communication of the ACM 53, 80 2010; Zhao et al., in KDD' 15 2015 pp. 1513-1522*.
+"""
+
 from functions import *
 import math
 
 
 def parameters(log_r_inf, log_r_time):
     """
-    calculate the parameters value of linear regression model
+    calculate the parameters value for the linear regression model
     :param log_r_time: array containing the total number of re-tweet at time T
-    :param log_r_inf: array containing the total number of re-tweet
+    :param log_r_inf: array containing the actual value of total number of re-tweet at the prediction time
     :return: the tuple containing the linear regression model parameters (alpha and variance)
     """
     alpha = sum([(log_r_inf[i] - log_r_time[i]) for i in range(len(log_r_time))]) / len(log_r_time)

@@ -1,3 +1,18 @@
+# Author: Niharika Singhal
+#
+# For license information, see LICENSE.txt
+
+"""
+Implements functions for calculating the number of events within the observation time and the prediction time.
+
+Provides different function for calculating the number of events, with single and multiple prediction time with the
+window concept
+
+References
+----------
+.. *Szabo and Huberman, Communication of the ACM 53, 80 2010; Zhao et al., in KDD' 15 2015 pp. 1513-1522*.
+"""
+
 import re
 import warnings
 import math
@@ -16,18 +31,18 @@ def numerical_sort(value):
 
 def no_of_events(tweet_file, t_observation, t_prediction, time_factor=1):
     """
-    calculate the tweet number
-    :param tweet_file: path to file
+    calculate the total number of re-tweet at the observation time and the prediction time
+    :param tweet_file: data file
     :param t_observation: the observation time
     :param t_prediction: prediction time
-    :param time_factor: factor to multiply time with, useful to convert time unit
+    :param time_factor: factor to multiply time to convert the time unit in seconds
     :return: the tuple containing the (total_no_of_tweets (at the specific time), tweets_at time_t)
     """
     event_t_obs = 0
     event_t_pred = 0
 
     with open(tweet_file, "r") as in_file:
-        first = next(in_file) # to remove the first line in the tweet file
+        first = next(in_file) # to remove the first line in the data file
         for num, line in enumerate(in_file, 0):  # 0 to remove the original tweet  # change to 1 to add original tweet
             values = line.split(" ")
             if float(values[0]) <= (t_observation * time_factor):
@@ -39,18 +54,18 @@ def no_of_events(tweet_file, t_observation, t_prediction, time_factor=1):
         warnings.warn("No event have occurred till the observation time. The file WILL BE IGNORED")
         print("Ignored File Name:", tweet_file)
     else:
-        return event_t_obs, event_t_pred  # not considering the original tweet to count the original tweet
+        return event_t_obs, event_t_pred  # not considering the original tweet
 
 
 def no_of_events_in_window(event_file, t_hours, win_size, max_itr, time_factor=1):
     """
-    calculate the tweet number
-    :param event_file: name of the tweet file
-    :param t_hours: re-tweet at this time
-    :param time_factor: factor to multiply time with, useful to convert time unit
-    :param win_size: the window size in seconds
-    :param max_itr: the maximum number of intervals we want from a file
-    :return: a list of total_no_of_tweets in a time range for a file and a value at of number of tweet at time t
+    calculate the total number of re-tweet at the observation time and the multiple prediction time
+    :param event_file: data file
+    :param t_hours: observation time
+    :param time_factor: factor to multiply time to convert the time unit in seconds
+    :param win_size: the window size for multiple prediction value
+    :param max_itr: define the iteration for the window size
+    :return: total no of re-tweets at observation time, multiple prediction value, with and without log
     """
     event_t = 0
     event_eof = 0

@@ -1,3 +1,17 @@
+# Author: Niharika Singhal
+#
+# For license information, see LICENSE.txt
+
+"""
+
+Full example on how to use linear regression model for predicting re-tweet activity
+Please replace file paths according to your local directory structure.
+
+References
+----------
+.. *Szabo and Huberman, Communication of the ACM 53, 80 2010; Zhao et al., in KDD' 15 2015 pp. 1513-1522*.
+"""
+
 from estimation import *
 from prediction import *
 import glob as gb
@@ -7,11 +21,13 @@ import matplotlib.pyplot as plt
 # estimation
 T_OBS = 12
 T_PRED = 16
-file_list_training = sorted(gb.glob("../Data/training/RT*.txt"), key=numerical_sort)  # for all the training file
+file_name_training = "../Data/training/RT*.txt"  # path to the files used for training
+file_list_training = sorted(gb.glob(file_name_training), key=numerical_sort)  # for all the training file
 parameters_value = linear_regression_estimation(file_list_training, T_OBS, T_PRED)
 
 # prediction
-file_list_test = sorted(gb.glob("../Data/test/RT*.txt"), key=numerical_sort)  # for all the training file
+file_name_test = "../Data/test/RT*.txt"  # path to the files used for prediction
+file_list_test = sorted(gb.glob(file_name_test), key=numerical_sort)  # for all the training file
 nfile_prediction_result = linear_regression_prediction(parameters_value, T_OBS, T_PRED, file_list_test)
 # print("The prediction result for n files are:", nfile_prediction_result)
 
