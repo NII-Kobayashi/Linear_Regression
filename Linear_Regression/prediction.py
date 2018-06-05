@@ -23,7 +23,7 @@ def event_prediction(alpha, var, r_t):
     :return: the biased estimator
     """
 
-    if type(alpha) == float:
+    if isinstance(alpha, float):
         r_est = r_t * (math.exp(alpha + (var / 2.0)))
         return r_est
     else:
