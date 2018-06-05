@@ -16,7 +16,7 @@ import math
 
 def event_prediction(alpha, var, r_t):
     """
-    estimate the total number of possible re-tweet at the time t
+    predict the total number of possible re-tweet at the time t
     :param alpha: estimator parameter for linear regression model
     :param var: estimator parameter for linear regression model
     :param r_t: the total number of tweet at the observation time

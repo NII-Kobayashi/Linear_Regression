@@ -29,7 +29,7 @@ parameters_value = linear_regression_estimation(file_list_training, T_OBS, T_PRE
 file_name_test = "../Data/test/RT*.txt"  # path to the files used for prediction
 file_list_test = sorted(gb.glob(file_name_test), key=numerical_sort)  # for all the training file
 nfile_prediction_result = linear_regression_prediction(parameters_value, T_OBS, T_PRED, file_list_test)
-# print("The prediction result for n files are:", nfile_prediction_result)
+print("The prediction result for n files are:", nfile_prediction_result)
 
 
 # plot for one file data prediction

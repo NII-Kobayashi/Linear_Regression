@@ -23,6 +23,7 @@ def cross_validation_error(k_fold, event_list_data, max_value_itr):
        :param k_fold: the number of times we want to use the cross-validation
        :param event_list_data: list log and anti log values, for the re-tweet at time t and re-tweet at multiple
        prediction time, from all the data files
+       :param max_value_itr: the number of iteration for the prediction value
        :return: the average mean, media error and correlation
        """
     parameters_value_list = []
