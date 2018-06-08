@@ -30,7 +30,7 @@ There are two example code in the directory, i.e. example.py, example_cross_vali
 
  - *example.py* : This code estimates all the model parameters (alpha, variance) from observation data
     and predicts future retweet activity.
- - *example_cross_validation.py* : This code evalutes the error of the model by using 5 cross validation
+ - *example_cross_validation.py* : This code evaluates the error of the model by using 5 cross validation
     and prints the average mean, media error and correlation
 
 You can just run :
