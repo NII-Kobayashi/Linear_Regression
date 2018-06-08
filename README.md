@@ -1,4 +1,4 @@
-# Prediction of Twitter retweet dynamic using Linear Regression Model
+# Prediction of Twitter re-tweet dynamic using Linear Regression Model
 
 This is the code illustrating the *Szabo and Huberman, Communication of the ACM 53, 80 2010;
 Zhao et al., in KDD' 15 2015 pp. 1513-1522*.
@@ -9,7 +9,7 @@ the context of twitter re-tweet prediction.
 
  - Python 3
  - Numpy >= 1.10.4
- -sklearn > =  0.19.1
+ - sklearn >=  0.19.1
 
 ## Getting started
 
