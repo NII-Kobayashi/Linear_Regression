@@ -22,7 +22,7 @@ sub-folders and this README file.
 
 The **Data** folder contains some twitter data that can be used for training and testing.
 
-The **Linear_Regression** folder contains all the core python code.
+The **Linear_Regression_model** folder contains all the core python code, example file and Data folder.
 
 ## Running some examples
 

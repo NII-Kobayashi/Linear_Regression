@@ -13,8 +13,8 @@ References
 import numpy as np
 from sklearn.model_selection import KFold
 import statistics
-from Linear_Regression.estimation import *
-from Linear_Regression.prediction import *
+from estimation import *
+from prediction import *
 
 
 def cross_validation_error(k_fold, event_list_data, max_value_itr):

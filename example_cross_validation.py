@@ -15,7 +15,7 @@ Outputs is
 This code is developed by Niharika Singhal under the supervision of Ryota Kobayashi.
 """
 
-from Linear_Regression.cross_validation import *
+from cross_validation import *
 import glob as gb
 
 
