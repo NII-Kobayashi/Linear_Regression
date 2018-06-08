@@ -26,6 +26,13 @@ The **Linear_Regression** folder contains all the core python code.
 
 ## Running some examples
 
+There are two example code in the directory, i.e. example.py, example_cross_validation.py
+
+ - *example.py* : This code estimates all the model parameters (alpha, variance) from observation data
+    and predicts future retweet activity.
+ - *example_cross_validation.py* : This code evalutes the error of the model by using 5 cross validation
+    and prints the average mean, media error and correlation
+
 You can just run :
 
      python example.py
@@ -36,14 +43,11 @@ readable and understandable.
 
 ## Description of each module
 
- - *example.py* : shows the working example and the plot for one file
- - *example_cross_validation.py* : shows the working example with 5 cross validation and prints the average mean, media error and correlation
  - *estimate.py* :  implements the basic mathematical expression
-    from the linear regression equations used in the paper for estimating the parameters.
+    from the linear regression equations used in the papers for estimating the parameters.
  - *prediction.py* : implements the basic mathematical expression
-    from the linear regression equations used in the paper for predicting the parameters.
- - *cross_validation.py* : function for 5- fold cross validation on all the data set
-    from the linear regression equations used in the paper for predicting the parameters.
+    from the linear regression equations used in the papers for predicting the parameters.
+ - *cross_validation.py* : function for 5- fold cross validation to check the accuracy of the model.
  - *functions.py* :  implements the function for extracting the number
     of events from the data file and a function to sort the file name numerically
 
@@ -51,8 +55,9 @@ readable and understandable.
 ## Data source
 
 The provided samples are extracted from the data set used by Zhao et al. in the
-[SEISMIC](http://snap.stanford.edu/seismic/seismic.pdf) paper. You can find more
-information about the data [here] (http://snap.stanford.edu/seismic/#data).
+[SEISMIC](http://snap.stanford.edu/seismic/seismic.pdf) paper.
+You can find more information about the data [here]
+(http://snap.stanford.edu/seismic/#data).
 
 For this work the data (used for training) was slightly aggregated to the
 following format:
@@ -66,4 +71,4 @@ following format:
 
 This project is licensed under the terms of the MIT license.
 
-Please contact me if you want to use the code for commercial purposes.
+Please contact Ryota Kobayashi if you want to use the code for commercial purposes.
