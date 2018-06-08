@@ -29,7 +29,7 @@ The **Linear_Regression** folder contains all the core python code.
 There are two example code in the directory, i.e. example.py, example_cross_validation.py
 
  - *example.py* : This code estimates all the model parameters (alpha, variance) from observation data
-    and predicts future retweet activity.
+    and predicts future re-tweet activity.
  - *example_cross_validation.py* : This code evaluates the error of the model by using 5 cross validation
     and prints the average mean, media error and correlation
 
@@ -63,8 +63,8 @@ For this work the data (used for training) was slightly aggregated to the
 following format:
 - one file peer tweet
 - space separated
-- first row: \<number of total retweets\> \<start time of tweet in days\>
-- every other row: \<relative time of tweet/retweet in seconds\> \<number of followers\>
+- first row: \<number of total re-tweets\> \<start time of tweet in days\>
+- every other row: \<relative time of tweet/re-tweet in seconds\> \<number of followers\>
 - only
 
 ## License

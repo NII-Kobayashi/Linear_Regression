@@ -1,6 +1,6 @@
 """
 This code trains the simple linear regression model parameters (alpha, variance) based on a re-tweet data-set
-(data/training/RT*.txt), assuming the parameters are same in the dat-aset.
+(data/training/RT*.txt), assuming the parameters are same in the data-set.
 Please replace file paths according to your local directory structure.
 
 Inputs are
@@ -24,8 +24,8 @@ import matplotlib.pyplot as plt
 # estimation
 T_OBS = 12
 T_PRED = 16
-file_name_training = "../Data/training/RT*.txt"  # path to the files used for training
-file_list_training = sorted(gb.glob(file_name_training), key=numerical_sort)  # for all the training file
+filename = "../Data/training/RT*.txt"  # path to the files used for training
+file_list_training = sorted(gb.glob(filename), key=numerical_sort)  # for all the training file
 parameters_value = linear_regression_estimation(file_list_training, T_OBS, T_PRED)
 
 # prediction

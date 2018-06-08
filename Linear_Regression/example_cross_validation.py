@@ -1,6 +1,6 @@
 """
 This code evaluates the simple linear regression model parameters, based on a re-tweet data-set
-(data/training/RT*.txt), assuming the parameters are same in the data-set.
+(Data/training/RT*.txt), assuming the parameters are same in the data-set.
 Please replace file paths according to your local directory structure.
 
 Inputs are
