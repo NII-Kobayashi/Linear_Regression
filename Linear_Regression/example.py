@@ -1,15 +1,18 @@
-# Author: Niharika Singhal
-#
-# For license information, see LICENSE.txt
-
 """
-
-Full example on how to use linear regression model for predicting re-tweet activity
+This code trains the simple linear regression model parameters (alpha, variance) based on a re-tweet data-set
+(data/training/RT*.txt), assuming the parameters are same in the dat-aset.
 Please replace file paths according to your local directory structure.
 
-References
-----------
-.. *Szabo and Huberman, Communication of the ACM 53, 80 2010; Zhao et al., in KDD' 15 2015 pp. 1513-1522*.
+Inputs are
+1) Data file that includes the re-tweet times and the number of followers
+Here, this code reads 'Data/training/RT*.txt' (= filename) and 'Data/test/RT*.txt' (= file_name_test) for test data set.
+2) Observation time (= T_OBS).
+3) Final time of prediction (= T_PRED).
+
+Outputs is
+1) the prediction time for the test data set .
+
+This code is developed by Niharika Singhal under the supervision of Ryota Kobayashi.
 """
 
 from estimation import *

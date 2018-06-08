@@ -3,7 +3,7 @@
 # For license information, see LICENSE.txt
 
 """
-Implements functions for estimating the parameters used in linear regression model
+Implements functions for estimating the parameters (alpha and variance) used in simple linear regression model
 
 References
 ----------
