@@ -49,8 +49,6 @@ print("The prediction result for n files are:", nfile_prediction_result)
 
 
 
-
-
 # plot for one file data prediction
 runtime = 15
 event_list_test = [no_of_events(file_list_test[5], i, 6+i, 3600) for i in range(1, runtime +1)]
