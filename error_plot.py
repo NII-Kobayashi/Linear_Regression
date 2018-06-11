@@ -1,5 +1,5 @@
 """
-This code trains the plot the mean error and the variance for the simple linear regression model
+This code plot the mean error and the variance for the simple linear regression model
 based on a re-tweet data-set (data/training/RT*.txt), assuming the parameters are same in the data-set.
 Please replace file paths according to your local directory structure.
 
@@ -45,7 +45,7 @@ file_list = sorted(gb.glob(filename), key=numerical_sort)  # for files having tw
 file_name_test = "Data/test/RT*.txt"  # path to the files used for prediction
 file_list_test = sorted(gb.glob(file_name_test), key=numerical_sort)  # for all the training file
 
-# different observation time
+# plot at different observation time and fixed prediction time
 T_OBS = 6
 T_PRE = 78
 runtime = 13
