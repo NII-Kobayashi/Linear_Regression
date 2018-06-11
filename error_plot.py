@@ -23,7 +23,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def plot_different_time(t_obs, t_pred, file_list_train, file_list_test_):
+def mean_error_sd(t_obs, t_pred, file_list_train, file_list_test_):
     parameters_value = linear_regression_estimation(file_list_train, t_obs, t_pred)
     parameters_value = list(filter(None.__ne__, parameters_value))  # checking for none value
 
@@ -49,7 +49,7 @@ file_list_test = sorted(gb.glob(file_name_test), key=numerical_sort)  # for all 
 T_OBS = 6
 T_PRE = 78
 runtime = 13
-res = [plot_different_time((T_OBS*j), T_PRE, file_list, file_list_test) for j in range(1, runtime)]
+res = [mean_error_sd((T_OBS*j), T_PRE, file_list, file_list_test) for j in range(1, runtime)]
 mean_lr = [res[i][0] for i in range(len(res))]
 std_lr = [res[i][1] for i in range(len(res))]
 plt.errorbar(np.arange(6, 6*runtime, 6), np.log(mean_lr), np.log(std_lr), linestyle='None', marker='^', capsize=3)
