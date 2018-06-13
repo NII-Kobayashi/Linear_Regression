@@ -55,15 +55,15 @@ res = [mean_error_sd((T_OBS*j), T_PRE, file_list, file_list_test) for j in range
 mean_lr = [res[i][0] for i in range(len(res))]
 std_lr = [res[i][1] for i in range(len(res))]
 q1 = [res[i][2] for i in range(len(res))]
-q2 = [res[i][3] for i in range(len(res))]
+q3 = [res[i][3] for i in range(len(res))]
 
 plt.errorbar(np.arange(T_OBS, T_OBS*runtime, T_OBS), mean_lr, std_lr, linestyle='None', marker='^', capsize=3)
+plt.plot(np.arange(T_OBS, T_OBS*runtime, T_OBS), q1, 'k_')
+plt.plot(np.arange(T_OBS, T_OBS*runtime, T_OBS), q3, 'k_')
 plt.xlabel('T(hour) observation time')
 plt.ylabel('Mean error')
-plt.ylim(0)
 plt.xticks(np.arange(T_OBS, T_OBS*runtime, T_OBS))
 plt.title("Prediction value at T = 78 hours for different observation time")
-plt.grid(True)
 plt.show()
 
 
