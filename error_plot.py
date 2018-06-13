@@ -37,7 +37,9 @@ def mean_error_sd(t_obs, t_pred, file_list_train, file_list_test_):
     error = [(abs(event_pred_true[i] - t_pred_estimated[i])) for i in range(len(event_pred_true))]
     mean_error = np.mean(error)
     sd = np.std(error)
-    return mean_error, sd
+    quan1 = np.percentile(error, 25)
+    quan3 = np.percentile(error, 75)
+    return mean_error, sd, quan1, quan3
 
 
 filename = "Data/training/RT*.txt"
@@ -51,11 +53,13 @@ T_PRE = 78
 runtime = 13
 res = [mean_error_sd((T_OBS*j), T_PRE, file_list, file_list_test) for j in range(1, runtime)]
 mean_lr = [res[i][0] for i in range(len(res))]
-print(mean_lr)
 std_lr = [res[i][1] for i in range(len(res))]
-plt.errorbar(np.arange(T_OBS, T_OBS*runtime, T_OBS), np.log(mean_lr), np.log(std_lr), linestyle='None', marker='^', capsize=3)
+q1 = [res[i][2] for i in range(len(res))]
+q2 = [res[i][3] for i in range(len(res))]
+
+plt.errorbar(np.arange(T_OBS, T_OBS*runtime, T_OBS), mean_lr, std_lr, linestyle='None', marker='^', capsize=3)
 plt.xlabel('T(hour) observation time')
-plt.ylabel('Log Mean error')
+plt.ylabel('Mean error')
 plt.ylim(0)
 plt.xticks(np.arange(T_OBS, T_OBS*runtime, T_OBS))
 plt.title("Prediction value at T = 78 hours for different observation time")
