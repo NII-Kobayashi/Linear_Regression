@@ -33,7 +33,7 @@ parameters_value = linear_regression_estimation(file_list_training, T_OBS, T_PRE
 
 # prediction for one test file
 file_name_test = "Data/test/RT2560.txt"  # path to the files used for prediction
-file_list_test = sorted(gb.glob(file_name_test), key=numerical_sort)  # for all the training file
+file_list_test = sorted(gb.glob(file_name_test), key=numerical_sort)  # for all the training file more then one
 # prediction
 event_list_test = no_of_events(file_name_test, T_OBS, T_PRED, 3600)
 event_pred_true = event_list_test[1]

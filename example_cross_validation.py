@@ -3,14 +3,14 @@ This code evaluates the simple linear regression model parameters, based on a re
 (Data/training/RT*.txt), assuming the parameters are same in the data-set.
 Please replace file paths according to your local directory structure.
 
-Inputs are
+Input are
 1) Data file that includes the re-tweet times and the number of followers
 Here, this code reads 'Data/RT*.txt' (= filename) and all the data files are saved in (= file_list_all)
 2) Observation time (= obs_time_init).
 3) window size to consider multiple prediction time (= window_size).
 4) to run for various observation time =(iteration)
 
-Outputs is
+Output are
 1) Errors evaluated via Cross-Validation.
 2) plot the mean error at different observation time
 
