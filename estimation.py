@@ -28,14 +28,14 @@ def parameters(log_r_inf, log_r_time):
 
 def linear_regression_estimation(training_data, t_obs, t_pred):
     """
-     call the no_of_events and parameters function and rise an exception if training file is less then 10
+     call the no_of_events and parameters function and raise an exception if training files are less then 10
     :param training_data: the files used for training the model
     :param t_obs: the observation time
     :param t_pred: the prediction time
     :return: the tuple containing the linear regression model parameters (alpha and variance)
     """
     if len(training_data) < 10:
-        raise Exception("There should be at-least 10 training file")
+        raise Exception("There should be at-least 10 training files")
     event_list = [no_of_events(training_data[i], t_obs, t_pred, 3600) for i in range(len(training_data))]
     event_list = list(filter(None.__ne__, event_list))  # checking for none value
     log_t_obs = [math.log(event_list[i][0]) for i in range(len(event_list))]

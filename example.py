@@ -41,11 +41,11 @@ t_pred_estimated = event_prediction(parameters_value[0], parameters_value[1], ev
 error = (abs(event_pred_true - t_pred_estimated))
 
 print("The parameters estimated are:")
-print("alpha :", parameters_value[0])
-print("Variance:", parameters_value[1])
-print("The prediction result for the observation time at ", T_OBS, "hours and the prediction time at", T_PRED, "hour is:")
-print(t_pred_estimated)
+print("alpha = {0:.3f}".format(round(parameters_value[0], 3)))
+print("Variance = {0:.3f}".format(round(parameters_value[1], 3)))
+print("The prediction result for the observation time at ", T_OBS, "hours and the prediction time at", T_PRED,
+      "hour is:", int(t_pred_estimated))
 print("The true value at the prediction time is", event_pred_true)
-print("The error estimated is:", error)
+print("The error estimated is:", int(error))
 
 
