@@ -33,7 +33,7 @@ def no_of_events(tweet_file, t_observation, t_prediction, time_factor=1):
     :param t_observation: observation time
     :param t_prediction: final time of prediction
     :param time_factor: factor to convert the time unit in seconds
-    :return: tuple, (total_no_of_tweets (at the specific time??), tweets_at time_t)
+    :return: tuple, the number of retweets at an observation time and at the final time
     """
     event_t_obs = 0
     event_t_pred = 0
@@ -56,13 +56,13 @@ def no_of_events(tweet_file, t_observation, t_prediction, time_factor=1):
 
 def no_of_events_in_window(event_file, t_hours, win_size, max_itr, time_factor=1):
     """
-    calculate the number of retweets at the observation time and that at the final times of prediction
+    calculate the number of retweets at the observation time and at the final times of prediction
     :param event_file: data file
     :param t_hours: observation time
     :param time_factor: factor to convert the time unit in seconds
     :param win_size: window size for prediction
     :param max_itr: the number of windows for prediction
-    :return: list, the number of retweets at an observation time and that at the final times, and their logarithms
+    :return: list, the number of retweets at an observation time and at the final times with their logarithms
     """
     event_t = 0
     event_eof = 0

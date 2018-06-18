@@ -29,7 +29,7 @@ def parameters(log_r_inf, log_r_time):
 def linear_regression_estimation(training_data, t_obs, t_pred):
     """
      Return the estimated parameters if the number of training files are more than 10.
-     Otherwise, an error massage appears.
+     Otherwise, an error message appears.
     :param training_data: array, the files used in training
     :param t_obs: value, the observation time
     :param t_pred: value, the prediction time

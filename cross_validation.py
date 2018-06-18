@@ -21,7 +21,7 @@ def cross_validation_error(k_fold, event_list_data, max_value_itr):
     """
     evaluate the mean and median of the errors, and their correlations
     :param k_fold: k_fold cross-validation
-    :param event_list_data: list, the number of retweets at an observation time and that at prediction times, and their
+    :param event_list_data: list, the number of retweets at an observation time and at prediction times, with their
     logarithms
     :param max_value_itr: the number of windows for prediction
     :return: the mean and median of the errors and their correlations
