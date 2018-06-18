@@ -1,19 +1,17 @@
 """
-This code evaluates the simple linear regression model parameters, based on a re-tweet data-set
-(Data/training/RT*.txt), assuming the parameters are same in the data-set.
+This code evaluates the linear regression model based on k-fold Cross-Validation.
 Please replace file paths according to your local directory structure.
 
-Input are
-1) Data file that includes the re-tweet times and the number of followers
-Here, this code reads 'Data/RT*.txt' (= filename) and all the data files are saved in (= file_list_all)
+Inputs are
+1) Data files that include the retweet times and the number of followers.
+   Here, this code reads 'Data/RT*.txt' (= filename) and all the data files are saved in (= file_list_all)
 2) Observation time (= obs_time_init).
-3) window size to consider multiple prediction time (= window_size).
-4) to run for various observation time =(iteration)
+3) Window size used in prediction (= window_size).
+4) k_fold cross-validation (= k_fold)
 
-Output are
-1) Errors evaluated via Cross-Validation.
-2) plot the mean error at different observation time
-
+Outputs is
+1) Errors evaluated based on k_fold Cross-validation.
+2) Plot of the mean error at different observation time
 
 This code is developed by Niharika Singhal under the supervision of Ryota Kobayashi.
 """
@@ -25,8 +23,8 @@ import matplotlib.pyplot as plt
 filename = "Data/RT*.txt"
 file_list_all = sorted(gb.glob(filename), key=numerical_sort)
 obs_time_init = 6  # observation time
-window_size = 4  # the window size for multiple prediction value
-iteration = 5  # number of time you want to run the loop
+window_size = 4  # window size for prediction
+iteration = 5  # k_fold Cross-Validation
 mean_list = []  # save the mean value at different observation time
 time_list = []  # save the different observation time considered
 T_max = 168

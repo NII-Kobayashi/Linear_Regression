@@ -3,14 +3,11 @@
 # For license information, see LICENSE.txt
 
 """
-Implements functions for calculating the number of events within the observation time and the prediction time.
-
-Provides different function for calculating the number of events, with single and multiple prediction time with the
-window concept
+Functions for calculating the number of retweets within the observation time and the prediction time(s).
 
 References
 ----------
-.. *Szabo and Huberman, Communication of the ACM 53, 80 2010; Zhao et al., in KDD' 15 2015 pp. 1513-1522*.
+.. *Kobayashi and Lambiotte, ICWSM 2016 pp.191-200; Szabo and Huberman, Communication of the ACM 53, 80 2010; Zhao et al., in KDD' 15 2015 pp. 1513-1522*.
 """
 
 import re
@@ -31,12 +28,12 @@ def numerical_sort(value):
 
 def no_of_events(tweet_file, t_observation, t_prediction, time_factor=1):
     """
-    calculate the total number of re-tweet at the observation time and the prediction time
+    calculate the number of retweets at the observation time (=t_observation) and that at the final time of prediction (=t_prediction)
     :param tweet_file: data file
-    :param t_observation: the observation time
-    :param t_prediction: prediction time
-    :param time_factor: factor to multiply time to convert the time unit in seconds
-    :return: the tuple containing the (total_no_of_tweets (at the specific time), tweets_at time_t)
+    :param t_observation: observation time
+    :param t_prediction: final time of prediction
+    :param time_factor: factor to convert the time unit in seconds
+    :return: tuple, (total_no_of_tweets (at the specific time??), tweets_at time_t)
     """
     event_t_obs = 0
     event_t_pred = 0
@@ -59,13 +56,13 @@ def no_of_events(tweet_file, t_observation, t_prediction, time_factor=1):
 
 def no_of_events_in_window(event_file, t_hours, win_size, max_itr, time_factor=1):
     """
-    calculate the total number of re-tweet at the observation time and the multiple prediction time
+    calculate the number of retweets at the observation time and that at the final times of prediction
     :param event_file: data file
     :param t_hours: observation time
-    :param time_factor: factor to multiply time to convert the time unit in seconds
-    :param win_size: the window size for multiple prediction value
-    :param max_itr: define the iteration for the window size
-    :return: total no of re-tweets at observation time, multiple prediction value, with and without log
+    :param time_factor: factor to convert the time unit in seconds
+    :param win_size: window size for prediction
+    :param max_itr: the number of windows for prediction
+    :return: list, the number of retweets at an observation time and that at the final times, and their logarithms
     """
     event_t = 0
     event_eof = 0

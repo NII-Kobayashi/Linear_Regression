@@ -3,11 +3,11 @@
 # For license information, see LICENSE.txt
 
 """
-Implements functions for predicting the future re-tweets
+Function for predicting the number of retweets in a future period
 
 References
 ----------
-.. *Szabo and Huberman, Communication of the ACM 53, 80 2010; Zhao et al., in KDD' 15 2015 pp. 1513-1522*.
+.. *Kobayashi and Lambiotte, ICWSM 2016 pp.191-200; Szabo and Huberman, Communication of the ACM 53, 80 2010; Zhao et al., in KDD' 15 2015 pp. 1513-1522*.
 """
 
 from functions import *
@@ -16,11 +16,11 @@ import math
 
 def event_prediction(alpha, var, r_t):
     """
-    predict the total number of possible re-tweet at the time t
-    :param alpha: estimator parameter for linear regression model
-    :param var: estimator parameter for linear regression model
+     predict the total number of retweets
+    :param alpha: a parameter of linear regression
+    :param var:  a parameter of linear regression
     :param r_t: the total number of tweet at the observation time
-    :return: the biased estimator
+    :return: predicted number of retweets
     """
 
     if isinstance(alpha, float):

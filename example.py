@@ -1,19 +1,17 @@
 """
-This code trains the simple linear regression model parameters (alpha, variance) based on a re-tweet data-set
-(data/training/RT*.txt), assuming the parameters are same in the data-set.
+This code trains the linear regression model by using a retweet dataaset (data/training/RT*.txt).
 Please replace file paths according to your local directory structure.
 
 Inputs are
-1) Data file that includes the re-tweet times and the number of followers
-Here, this code reads 'Data/training/RT*.txt' (= filename) and 'Data/test/RT*.txt' (= file_name_test) for test data set.
+1) Data files that include the retweet times and the number of followers.
+   Here, this code reads 'Data/training/RT*.txt' (= filename) and 'Data/test/RT*.txt' (= file_name_test) for test data set.
 2) Observation time (= T_OBS).
 3) Final time of prediction (= T_PRED).
 
 Outputs is
-1) The estimated parameters (alpha and variance)
-2) The prediction result obtained form the model
-3) The true prediction value
-4) Error estimated
+1) Estimated parameters (alpha and variance)
+2) Predicted number of retweets from the observation time (= T_OBS) to the final time (= T_PRED).
+3) Prediction error
 
 This code is developed by Niharika Singhal under the supervision of Ryota Kobayashi.
 """
@@ -43,9 +41,7 @@ error = (abs(event_pred_true - t_pred_estimated))
 print("The parameters estimated are:")
 print("alpha = {0:.3f}".format(round(parameters_value[0], 3)))
 print("Variance = {0:.3f}".format(round(parameters_value[1], 3)))
-print("The prediction result for the observation time at ", T_OBS, "hours and the prediction time at", T_PRED,
-      "hour is:", int(t_pred_estimated))
-print("The true value at the prediction time is", event_pred_true)
-print("The error estimated is:", int(error))
-
-
+print("Predicted number of retweets from the observation time (T_OBS=", T_OBS, "hours) to the final time (T_PRED=",
+      T_PRED, "hours):", int(t_pred_estimated))
+print("True value:", event_pred_true)
+print("Prediction error:", int(error))
