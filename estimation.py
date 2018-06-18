@@ -3,11 +3,11 @@
 # For license information, see LICENSE.txt
 
 """
-Functions estimate the parameters of the linear regression model.
+Functions for estimating the parameters of the linear regression model.
 
 References
 ----------
-.. *Kobayashi and Lambiotte, ICWSM 2016, pp.191-200, 2016; Szabo and Huberman, Communication of the ACM 53, 80, pp.80-88, 2010; Zhao et al., in KDD' 15, pp. 1513-1522, 2015*.
+.. *Kobayashi and Lambiotte, ICWSM, pp. 191-200, 2016; Szabo and Huberman, Communication of the ACM 53, pp.80-88, 2010; Zhao et al., KDD, pp. 1513-1522, 2015*.
 """
 
 from functions import *
@@ -16,9 +16,9 @@ import math
 
 def parameters(log_r_inf, log_r_time):
     """
-    Fit the parameters of the linear regression model.
-    :param log_r_time: array, the total number of retweets at the observation time
-    :param log_r_inf: array, the total number of retweets at the prediction time
+    Fit parameters of the linear regression model.
+    :param log_r_time: array, the total number of retweets for each tweet at the observation time
+    :param log_r_inf: array, the total number of retweets for each tweet at the prediction time
     :return: tuple, the linear regression model parameters (alpha and variance)
     """
     alpha = sum([(log_r_inf[i] - log_r_time[i]) for i in range(len(log_r_time))]) / len(log_r_time)
@@ -28,11 +28,11 @@ def parameters(log_r_inf, log_r_time):
 
 def linear_regression_estimation(training_data, t_obs, t_pred):
     """
-     Return the estimated parameters if the number of training files are more than 10.
-     Otherwise, an error message appears.
+    Return the estimated parameters if the number of training files are more than 10 (more than 10 tweets).
+    Otherwise, an error message appears.
     :param training_data: array, the files used in training
-    :param t_obs: value, the observation time
-    :param t_pred: value, the prediction time
+    :param t_obs: the observation time
+    :param t_pred: the prediction time
     :return: tuple, the linear regression model parameters (alpha and variance)
     """
     if len(training_data) < 10:

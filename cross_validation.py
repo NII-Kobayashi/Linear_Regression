@@ -3,11 +3,11 @@
 # For license information, see LICENSE.txt
 
 """
-function for evaluating the accuracy of the model based on cross-validation
+function for evaluating the accuracy based on cross-validation
 
 References
 ----------
-.. *Kobayashi and Lambiotte, ICWSM 2016 pp.191-200; Szabo and Huberman, Communication of the ACM 53, 80 2010; Zhao et al., in KDD' 15 2015 pp. 1513-1522*.
+.. *Kobayashi and Lambiotte, ICWSM, pp. 191-200, 2016; Szabo and Huberman, Communication of the ACM 53, pp.80-88, 2010; Zhao et al., KDD, pp. 1513-1522, 2015*.
 """
 
 import numpy as np
@@ -21,8 +21,7 @@ def cross_validation_error(k_fold, event_list_data, max_value_itr):
     """
     evaluate the mean and median of the errors, and their correlations
     :param k_fold: k_fold cross-validation
-    :param event_list_data: list, the number of retweets at an observation time and at prediction times, with their
-    logarithms
+    :param event_list_data: list, the number of retweets at an observation time and at prediction times, and their logarithms
     :param max_value_itr: the number of windows for prediction
     :return: the mean and median of the errors and their correlations
     """

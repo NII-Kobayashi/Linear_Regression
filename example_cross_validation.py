@@ -1,5 +1,5 @@
 """
-This code evaluates the linear regression model based on k-fold Cross-Validation.
+This code evaluates the linear regression model based on k-fold cross-validation.
 Please replace file paths according to your local directory structure.
 
 Inputs are

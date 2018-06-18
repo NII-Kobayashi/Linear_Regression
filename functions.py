@@ -3,11 +3,11 @@
 # For license information, see LICENSE.txt
 
 """
-Functions for calculating the number of retweets within the observation time and the prediction time(s).
+Functions for calculating the total number of retweets at the observation time and at the final time(s) of prediction.
 
 References
 ----------
-.. *Kobayashi and Lambiotte, ICWSM 2016 pp.191-200; Szabo and Huberman, Communication of the ACM 53, 80 2010; Zhao et al., in KDD' 15 2015 pp. 1513-1522*.
+.. *Kobayashi and Lambiotte, ICWSM, pp. 191-200, 2016; Szabo and Huberman, Communication of the ACM 53, pp.80-88, 2010; Zhao et al., KDD, pp. 1513-1522, 2015*.
 """
 
 import re
@@ -28,7 +28,7 @@ def numerical_sort(value):
 
 def no_of_events(tweet_file, t_observation, t_prediction, time_factor=1):
     """
-    calculate the number of retweets at the observation time (=t_observation) and that at the final time of prediction (=t_prediction)
+    calculate the number of retweets at the observation time (=t_observation) and at the final time of prediction (=t_prediction)
     :param tweet_file: data file
     :param t_observation: observation time
     :param t_prediction: final time of prediction
@@ -61,8 +61,8 @@ def no_of_events_in_window(event_file, t_hours, win_size, max_itr, time_factor=1
     :param t_hours: observation time
     :param time_factor: factor to convert the time unit in seconds
     :param win_size: window size for prediction
-    :param max_itr: the number of windows for prediction
-    :return: list, the number of retweets at an observation time and at the final times with their logarithms
+    :param max_itr: the number of windows used in prediction
+    :return: list, the number of retweets at an observation time and at the final times, and with their logarithms
     """
     event_t = 0
     event_eof = 0
