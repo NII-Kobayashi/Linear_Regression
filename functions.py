@@ -7,7 +7,8 @@ Functions for calculating the total number of retweets at the observation time a
 
 References
 ----------
-.. *Kobayashi and Lambiotte, ICWSM, pp. 191-200, 2016; Szabo and Huberman, Communication of the ACM 53, pp.80-88, 2010; Zhao et al., KDD, pp. 1513-1522, 2015*.
+.. *Kobayashi and Lambiotte, ICWSM, pp. 191-200, 2016; Szabo and Huberman, Communication of the ACM 53, pp.80-88, 2010;
+Zhao et al., KDD, pp. 1513-1522, 2015*.
 """
 
 import re
@@ -62,7 +63,7 @@ def no_of_events_in_window(event_file, t_hours, win_size, max_itr, time_factor=1
     :param time_factor: factor to convert the time unit in seconds
     :param win_size: window size for prediction
     :param max_itr: the number of windows used in prediction
-    :return: list, the number of retweets at an observation time and at the final times, and with their logarithms
+    :return: list, the number of retweets at an observation time and at the final times, and their logarithms
     """
     event_t = 0
     event_eof = 0

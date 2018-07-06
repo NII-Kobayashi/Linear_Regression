@@ -1,7 +1,8 @@
 
 # Prediction of Twitter re-tweet dynamic using Linear Regression
 
-This code predicts the number of retweets in a future period used in *Kobayashi and Lambiotte, ICWSM, pp. 191-200, 2016*. The algorithm is a modification of Lineaer Regression method proposed in *Szabo and Huberman, Communication of the ACM 53, pp.80-88, 2010* and used in *Zhao et al., KDD, pp. 1513-1522, 2015*.
+This code predicts the number of retweets in a future period used in *Kobayashi and Lambiotte, ICWSM, pp. 191-200, 2016*.
+The algorithm is a modification of Lineaer Regression method proposed in *Szabo and Huberman, Communication of the ACM 53, pp.80-88, 2010* and used in *Zhao et al., KDD, pp. 1513-1522, 2015*.
 
 ## Requirements
 

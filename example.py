@@ -1,5 +1,6 @@
 """
-This code trains the linear regression model by using a retweet dataaset (data/training/RT*.txt).
+This code trains the linear regression model based on a retweet dataset (data/training/RT*.txt), assuming
+parameters are the same for each tweet.
 Please replace file paths according to your local directory structure.
 
 Inputs are

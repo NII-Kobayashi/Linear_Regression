@@ -3,11 +3,12 @@
 # For license information, see LICENSE.txt
 
 """
-Functions for estimating the parameters of the linear regression model.
+Functions for estimating the parameters of the linear regression model (LR).
 
 References
 ----------
-.. *Kobayashi and Lambiotte, ICWSM, pp. 191-200, 2016; Szabo and Huberman, Communication of the ACM 53, pp.80-88, 2010; Zhao et al., KDD, pp. 1513-1522, 2015*.
+.. *Kobayashi and Lambiotte, ICWSM, pp. 191-200, 2016; Szabo and Huberman, Communication of the ACM 53, pp.80-88, 2010;
+Zhao et al., KDD, pp. 1513-1522, 2015*.
 """
 
 from functions import *
@@ -17,8 +18,8 @@ import math
 def parameters(log_r_inf, log_r_time):
     """
     Fit parameters of the linear regression model.
-    :param log_r_time: array, the total number of retweets for each tweet at the observation time
-    :param log_r_inf: array, the total number of retweets for each tweet at the prediction time
+    :param log_r_time: array, the total number of retweets at an observation time for all tweet
+    :param log_r_inf: array, the total number of retweets at the prediction time for all tweet
     :return: tuple, the linear regression model parameters (alpha and variance)
     """
     alpha = sum([(log_r_inf[i] - log_r_time[i]) for i in range(len(log_r_time))]) / len(log_r_time)

@@ -3,7 +3,7 @@
 # For license information, see LICENSE.txt
 
 """
-function for evaluating the accuracy based on cross-validation
+Function for checking the accuracy of the model based on k-Fold cross-validation
 
 References
 ----------

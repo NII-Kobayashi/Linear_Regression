@@ -1,12 +1,13 @@
 """
-This code evaluates the linear regression model based on k-fold cross-validation.
-Please replace file paths according to your local directory structure.
+This code evaluates the linear regression with degree, based on retweets dataset (Data/training/RT*.txt),
+assuming parameters are the same for each tweet.
+Please replace file paths according to your local directory structure..
 
 Inputs are
 1) Data files that include the retweet times and the number of followers.
    Here, this code reads 'Data/RT*.txt' (= filename) and all the data files are saved in (= file_list_all)
 2) Observation time (= obs_time_init).
-3) Window size used in prediction (= window_size).
+3) Width of the window for predicting retweet time series (= window_size).
 4) k_fold cross-validation (= k_fold)
 
 Outputs is
