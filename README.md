@@ -14,7 +14,7 @@ The algorithm is a modification of Lineaer Regression method proposed in *Szabo 
 
 The git repository can be cloned by simply using:
 
-    git clone <TODO>
+    git clone https://github.com/NII-Kobayashi/Linear_Regression.git
 
 Once the repository is cloned, the folder should contain two different
 sub-folders and this README file.

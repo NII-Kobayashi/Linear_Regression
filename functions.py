@@ -40,7 +40,7 @@ def no_of_events(tweet_file, t_observation, t_prediction, time_factor=1):
     event_t_pred = 0
 
     with open(tweet_file, "r") as in_file:
-        first = next(in_file) # to remove the first line in the data file
+        first = next(in_file)  # to remove the first line in the data file
         for num, line in enumerate(in_file, 0):  # 0 to remove the original tweet  # change to 1 to add original tweet
             values = line.split(" ")
             if float(values[0]) <= (t_observation * time_factor):
